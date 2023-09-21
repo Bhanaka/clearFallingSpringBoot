@@ -27,8 +27,13 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(message);
     }
     // Retrieve the all user roles
-    @GetMapping("getAllUserRoles")
+    @GetMapping("/getAllUserRoles")
     public List <UserRole> AllUserRoles (){
         return userRoleRepository.findAll() ;
+    }
+     // maintain the status of user role (active or deactivate)
+    @PutMapping("/changeRoleStatus")
+    public void changeRoleStatus(@RequestParam Long Id , String status){
+
     }
 }
