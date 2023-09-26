@@ -17,12 +17,8 @@ public class UserDetailsService {
     public void updateRoleStatus() {
         String RoleStatus = "true" ;
         if (RoleStatus == "true"){
-            System.out.println("now status value is true");
-        }
-//        if(RoleStatus.equals("true")){
 //            System.out.println("now status value is true");
-//        }else{
-//            System.out.println("now status value is false");
-//        }
+            userRoleRepository.DeActivateUserRole("true" , "1");
+        }
     }
 }
