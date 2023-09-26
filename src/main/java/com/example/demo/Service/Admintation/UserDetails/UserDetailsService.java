@@ -4,6 +4,7 @@ import com.example.demo.Models.Admintation.UserRole;
 import com.example.demo.Repository.Admintation.UserDetailsRepository.UserRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Objects;
 
@@ -14,6 +15,7 @@ public class UserDetailsService {
     public void InsertRole(UserRole userRole) {
         userRoleRepository.save(userRole);
     }
+    @Transactional
     public void updateRoleStatus() {
         String RoleStatus = "true" ;
         if (RoleStatus == "true"){
