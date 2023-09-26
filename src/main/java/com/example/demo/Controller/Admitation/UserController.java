@@ -1,5 +1,6 @@
 package com.example.demo.Controller.Admitation;
 
+import com.example.demo.DTO.Admintation.RoleStatusDTO;
 import com.example.demo.Models.Admintation.UserRole;
 import com.example.demo.Repository.Admintation.UserDetailsRepository.UserRoleRepository;
 import com.example.demo.Service.Admintation.UserDetails.UserDetailsService;
@@ -33,7 +34,9 @@ public class UserController {
     }
      // maintain the status of user role (active or deactivate)
     @PutMapping("/changeRoleStatus")
-    public void changeRoleStatus(@RequestParam Long Id , String status){
-
+    public void changeRoleStatus(@RequestBody RoleStatusDTO roleStatusDTO){
+//        System.out.println("id : "+ roleStatusDTO.getId());
+//        System.out.println("status :" +Status);
+        userDetailsService.updateRoleStatus() ;
     }
 }
