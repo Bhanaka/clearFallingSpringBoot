@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 public interface UserRoleRepository extends JpaRepository<UserRole, Long> {
     @Modifying
     @Query(value = " UPDATE `user_role` " +
-            "SET `active` = 'false' " +
-            "WHERE `id` = 1 ", nativeQuery = true)
+            "SET `active` = ?1 " +
+            "WHERE `id` = ?2 ", nativeQuery = true)
     void DeActivateUserRole(String state , String id) ;
     }

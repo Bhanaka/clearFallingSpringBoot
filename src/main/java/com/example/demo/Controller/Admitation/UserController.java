@@ -33,10 +33,9 @@ public class UserController {
         return userRoleRepository.findAll() ;
     }
      // maintain the status of user role (active or deactivate)
-    @PutMapping("/changeRoleStatus/{id}")
+    @PutMapping("/changeRoleStatus")
     public void changeRoleStatus(@RequestBody RoleStatusDTO roleStatusDTO){
-        System.out.println("id : "+ roleStatusDTO);
-//        System.out.println("status :" +Status);
-//        userDetailsService.updateRoleStatus() ;
+        userDetailsService.updateRoleStatus(roleStatusDTO);
+//        System.out.println(roleStatusDTO);
     }
 }
