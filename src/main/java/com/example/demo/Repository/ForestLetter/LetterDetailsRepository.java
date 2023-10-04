@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LetterDetailsRepository extends JpaRepository<LetterDetails, Long> {
-    @Query(value = "SELECT * FROM `letter_document` WHERE `sys_no` = ?1",nativeQuery = true)
+    @Query(value = "SELECT * FROM `letter_document` WHERE `sys_no` = ?1", nativeQuery = true)
     LetterDetails findLetter(String SystemNo);
+
+    @Query(value = "SELECT MAX(letter_id) AS last_id FROM letter_document" , nativeQuery = true)
+    Long getLastId() ;
 }

@@ -13,8 +13,8 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins= "http://192.168.1.35:8080")
 @RequestMapping("/user")
-@CrossOrigin(origins="http://localhost:8080/")
 public class UserController {
     @Autowired
     private UserDetailsService userDetailsService ;

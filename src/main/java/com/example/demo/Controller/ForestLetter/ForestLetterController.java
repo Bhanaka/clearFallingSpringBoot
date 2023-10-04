@@ -11,11 +11,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.List;
 
 @RestController
 @RequestMapping("/forestLetter")
+@CrossOrigin(origins= "http://192.168.1.35:8080")
+
 public class ForestLetterController {
     @Autowired
     private ForestLetterService forestLetterService ;
@@ -43,5 +44,9 @@ public class ForestLetterController {
     public LetterDetails GetEachLetter(@PathVariable String SystemNo){
         return letterDetailsRepository.findLetter(SystemNo);
 
+    }
+    @GetMapping("/LastId")
+    public Long getLastId(){
+        return forestLetterService.getLastId()  ;
     }
 }

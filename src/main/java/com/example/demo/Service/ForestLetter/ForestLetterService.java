@@ -61,7 +61,12 @@ public class ForestLetterService {
         }
         String fileName =myRef+"_"+formattedDate ;
         System.out.println(fileName);
-        filePath = "E:/demo/fileUpload/" + ""+fileName ;
+//        filePath = "E:/demo/fileUpload/" + ""+fileName ;
+        filePath = "G:/timco/ClearFalling/clearFallingSpringBoot/fileUpload/" + ""+fileName ;
         file.transferTo(new File(filePath));
+    }
+
+    public Long getLastId() {
+        return  letterDetailsRepository.getLastId()  ;
     }
 }
