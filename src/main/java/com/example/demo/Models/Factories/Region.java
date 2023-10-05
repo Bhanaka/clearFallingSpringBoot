@@ -10,8 +10,9 @@ import javax.persistence.*;
 public class Region {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long regionId;
-    private String regionCode ;
-    private String regionName ;
+    private Long region_id;
+    private String region_txt ;
+    private String region_code ;
+    private int region_status ;
 
 }

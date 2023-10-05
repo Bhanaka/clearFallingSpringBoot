@@ -17,7 +17,7 @@ import org.springframework.web.servlet.function.EntityResponse;
 import java.util.List;
 
 @RestController
-@RequestMapping("/factory")
+@RequestMapping("/process")
 public class FactoryController {
     @Autowired
     private RegionService regionService ;
@@ -44,16 +44,17 @@ public class FactoryController {
     public void GetAllDeposts(){
 
     }
-    @PostMapping("/insertRegion")
+    @PostMapping("/region")
     public ResponseEntity <String> InsertRegion(@RequestBody RegionDTO regionDTO){
         Region region = new Region();
-        region.setRegionCode(regionDTO.getRegionCode());
-        region.setRegionName(regionDTO.getRegionName());
+        region.setRegion_code(regionDTO.getRegion_code());
+        region.setRegion_txt(regionDTO.getRegion_txt());
+        region.setRegion_status(regionDTO.getRegion_status());
         regionService.insertRegion(region) ;
         String responseData = "Successfully insert region" ;
         return ResponseEntity.status(HttpStatus.OK).body(responseData);
     }
-    @GetMapping("/getAllRegions")
+    @GetMapping("/region")
     public List<Region> GetAllRegions(){
         return regionService.getAllRegions() ;
     }

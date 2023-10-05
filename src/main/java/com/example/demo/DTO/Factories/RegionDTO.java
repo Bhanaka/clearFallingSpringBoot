@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class RegionDTO {
 //    private Long regionId ;
-    private String regionCode ;
-    private String regionName ;
+    private String region_txt ;
+    private String region_code ;
+    private int region_status ;
 }
