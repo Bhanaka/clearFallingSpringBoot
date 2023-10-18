@@ -14,14 +14,14 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins= "http://192.168.1.35:8080")
-@RequestMapping("/user")
+@RequestMapping("/process")
 public class UserController {
     @Autowired
     private UserDetailsService userDetailsService ;
     @Autowired
     private UserRoleRepository userRoleRepository ;
     // insert user role details
-    @PostMapping("/insertRole")
+    @PostMapping("/userlevel")
     public ResponseEntity<String> InsertRole(@RequestBody UserRole userRole){
         userDetailsService.InsertRole(userRole);
         String message = "successfully insert user Role";
@@ -29,7 +29,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(message);
     }
     // Retrieve the all user roles
-    @GetMapping("/getAllUserRoles")
+    @GetMapping("/userlevel")
     public List <UserRole> AllUserRoles (){
         return userRoleRepository.findAll() ;
     }
@@ -39,4 +39,5 @@ public class UserController {
         userDetailsService.updateRoleStatus(roleStatusDTO);
 //        System.out.println(roleStatusDTO);
     }
+
 }

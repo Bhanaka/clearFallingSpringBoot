@@ -10,8 +10,7 @@ import javax.persistence.*;
 public class UserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String roleName ;
-    private String roleCode ;
-    private String active ;
+    private Long levelId;
+    private String levelName ;
+    private Boolean avalableUserLevel ;
 }
